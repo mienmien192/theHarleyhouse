@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3" style=" background: #000;">
+    <div class="container-fluid">
+        <strong><a class="navbar-brand" href="/" style="margin-left:70px" >The Harley House</a></strong>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/"><i class="fas fa-home"></i></a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-coffee"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="/category/">Phân loại</a></li>
+                            <li><a class="dropdown-item" href="/product/">Sản phẩm</a></li>
+
+                        </ul>
+
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Chuyện cà phê
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="/user/login">Hành trình từ nông trại đến ly cà phê</a></li>
+                            <li><a class="dropdown-item" href="/user/profile">The Harley House Coffee Beans</a></li>
+                            <li><a class="dropdown-item" href="/user/register">Nghệ thuật của pha chế</a></li>
+                            <li><a class="dropdown-item" href="/user/logout">Coffee Workshop </a></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Tuyển dụng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Ưu đãi thành viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">tin tức</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="/user/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/user/profile">Profile user</a></li>
+                            <li><a class="dropdown-item" href="/user/register">Register </a></li>
+                            <li><a class="dropdown-item" href="/user/logout">Log out </a></li>
+                            <li><a class="dropdown-item" href="/user">List User</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart/"><i class="fas fa-shopping-cart"></i>
+                        <span id="numCart1">
+                            <span id="numCart2">(
+                                <%
+                                if(session.cart){%>
+                                    <%= session.cart.items.length %>
+                                  <%}
+                                  else{%>
+                                    0
+                                <%}
+                                 %>
+                                 )
+                            </span>
+                        </span></a>
+
+                </li>
+
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" style="background:orange;" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</nav>

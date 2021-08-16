@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer-main {
+    background: #222f3e;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-main a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    font-family: 'Baloo Thambi 2', cursive;
+    text-transform: uppercase;
+}
+
+.main {
+    min-height: 80vh;
+    font-family: 'Baloo Thambi 2', cursive;
+}
+
+.product-card {
+    width: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.product-card .img img {
+    width: 90%;
+    height: 250px;
+    object-fit: fill;
+    /*thu nho theo ti le mong muon */
+}
+
+.content a {
+    text-transform: uppercase;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.content h4 {
+    color: orange;
+}
+
+.content a:hover {
+    color: orange;
+}
+
+.menu_home_title:after {
+    background: #191919;
+}
+
+.menu_home_title {
+    color: orange;
+}
+
+.line_after_heading:after {
+    content: '';
+    height: 4px;
+    background: #191919;
+    width: 10%;
+    display: block;
+}

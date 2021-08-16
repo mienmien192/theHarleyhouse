@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <%- include('../part/message') %>
+        <a href="/" class="btn btn-outline-success">Go back</a>
+        <div class="form-group">
+            <form action="/cart/order" method="POST">
+                <h4>Địa chỉ:</h4>
+                <input required type="text" class="form-control" placeholder="Enter the Address here">
+
+                <%
+                products.forEach(product=> {%>
+                    <div style="margin-top:20px;margin-bottom:20px; background: orange;">
+                        <%= product.item.name %>:(
+                            <%= product.qty %>)
+                                <span>--</span>
+                                <%= product.item.price*product.qty %>
+                    </div>
+                    <%})
+    %>
+                        <div class="total">
+                            <h1>Tổng tiền:
+                                <%= total %>
+                            </h1>
+                            <input type="submit" class="btn btn-primary px-5 mb-5" value="Order" name="order">
+
+                        </div>
+            </form>
+            <a href="/cart/pay" style="width: 200px; font-size:20px; color:#3498db; font-weight:bold;font-style: oblique;" class="btn btn-warning mt-2">
+                <i class="fab fa-paypal" style="font-size: 20px;"></i> <span style="color:navy; ">Pay</span>Pal</a> <br>
+        </div>
+</div>

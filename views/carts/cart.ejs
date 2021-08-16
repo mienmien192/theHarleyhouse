@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <center>
+        <h1 style="color: green">List Cart</h1>
+    </center>
+
+    <hr>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Quantity</th>
+
+            <th>Delete</th>
+
+        </tr>
+
+
+        <%
+            cart.map(cart=>{%>
+            <tr id="tr_cart_<%= cart.id %>">
+                <th>
+                    <%=  cart.item.name  %>
+                </th>
+                <th>
+                    <%=  cart.item.price  %>
+                </th>
+                <th><img src="<%= cart.imageSrc %>" alt="" width="50px"></th>
+
+
+                <th>
+                    <div class="d-flex">
+                        <form action="/cart/reduce/<%= cart.id %>?_method=PUT" method="POST" data-id="<%= cart.id %>" class="reduceCart">
+                            <input type="submit" value="-" class="btn btn-outline-success">
+                        </form>
+                        <span id="qty<%= cart.id %>"><span id="qty2<%= cart.id %>"><%= cart.qty %></span></span>
+                        <form action="/cart/increase/<%= cart.id %>?_method=PUT" method="POST" data-id="<%= cart.id %>" class="increaseCart">
+                            <input type="submit" value="+" class="btn btn-outline-success">
+                        </form>
+                    </div>
+                </th>
+
+                <th>
+                    <form action="/cart/<%= cart.id %>?_method=DELETE" method="POST" data-id="<%= cart.id %>" class="deleteCart">
+                        <input type="submit" value="Delete" class="btn btn-outline-danger">
+                    </form>
+                </th>
+            </tr>
+            <%})
+        %>
+    </table>
+    <h1 id="total1"><span id="total2">Total: <%= total %> VND</span>
+    </h1><a href="/cart/checkout/" class="btn btn-outline-success" style="float: right; width:50%">C H E C K  O U T</a>
+
+
+</div>
