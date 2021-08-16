@@ -23,7 +23,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false, limit: '10mb' })) //giup doc req.body
 const connectFunc = async() => {
     try {
-        await mongoose.connect('mongodb://localhost/bai2', {
+        await mongoose.connect('mongodb+srv://mienmien192:khanhha192@cluster0.1vu99.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
