@@ -79,6 +79,10 @@ router.get('/profile', check, (req, res) => {
 
     res.render('users/profile', { name: value })
 })
+router.get('/logout'), (req, res) => {
+    req.logout()
+    res.redirect('login')
+}
 
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
