@@ -42,7 +42,7 @@ module.exports = function(passport) {
     passport.use(new githubStrategy({
             clientID: "5e23fb50d9a03d3f938d",
             clientSecret: "69391c92d4c8a7d54c3f4451cb8dfb9fe18ff961",
-            callbackURL: "http://localhost:3000/user/github/callback"
+            callbackURL: "http://theharleyhouse.herokuapp.com/user/github/callback"
         },
         async function(accessToken, refreshToken, profile, done) {
             console.log(profile) //trong profile kbg có email
@@ -65,7 +65,7 @@ module.exports = function(passport) {
     passport.use(new googleStrategy({
                 clientID: "328172550981-me71cl6324vi10ce4p866jlkd1521ag9.apps.googleusercontent.com",
                 clientSecret: "W5Fxq5Zj16MUlgF_lWSI-fkM",
-                callbackURL: "http://localhost:3000/user/google/callback"
+                callbackURL: "http://theharleyhouse.herokuapp.com/user/google/callback"
             },
             async function(accessToken, refreshToken, profile, done) {
                 console.log(profile)
