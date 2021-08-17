@@ -90,7 +90,7 @@ module.exports = function(passport) {
     passport.use(new facebookStrategy({
             clientID: "529246084960554",
             clientSecret: "05583470c3137b3874987202acb755cf",
-            callbackURL: "http://localhost:3000/user/facebook/callback"
+            callbackURL: "http://theharleyhouse.herokuapp.com/user/facebook/callback"
         },
         async function(accessToken, refreshToken, profile, done) {
             console.log(profile)
