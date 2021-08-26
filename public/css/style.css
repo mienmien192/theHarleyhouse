@@ -5,7 +5,7 @@
 }
 
 .footer-main {
-    background: #222f3e;
+    background: #000;
     color: #fff;
     padding: 20px;
 }
@@ -16,13 +16,13 @@
 }
 
 .navbar {
-    font-family: 'Baloo Thambi 2', cursive;
+    font-family: 'Anton', sans-serif;
     text-transform: uppercase;
 }
 
 .main {
     min-height: 80vh;
-    font-family: 'Baloo Thambi 2', cursive;
+    font-family: 'Anton', sans-serif;
 }
 
 .product-card {
@@ -46,11 +46,11 @@
 }
 
 .content h4 {
-    color: orange;
+    color: #ea8025;
 }
 
 .content a:hover {
-    color: orange;
+    color: #ea8025;
 }
 
 .menu_home_title:after {
@@ -58,13 +58,21 @@
 }
 
 .menu_home_title {
-    color: orange;
+    color: #ea8025;
 }
 
 .line_after_heading:after {
     content: '';
     height: 4px;
     background: #191919;
-    width: 10%;
+    width: 5%;
+    display: block;
+}
+
+.line_after_heading2:after {
+    content: '';
+    height: 4px;
+    background: #fff;
+    width: 5%;
     display: block;
 }
