@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <center>
-        <h1 style="color: green">List Cart</h1>
+        <h1 style="color: green;margin-top:100px">List Cart</h1>
     </center>
 
     <hr>
@@ -11,7 +11,7 @@
             <th>Image</th>
             <th>Quantity</th>
 
-            <th>Delete</th>
+            <th><i class="fa fa-trash" style="font-size: 20px; "></i></th>
 
         </tr>
 
@@ -23,7 +23,7 @@
                     <%=  cart.item.name  %>
                 </th>
                 <th>
-                    <%=  cart.item.price  %>
+                    <%= Intl.NumberFormat().format(cart.item.price)   %>
                 </th>
                 <th><img src="<%= cart.imageSrc %>" alt="" width="50px"></th>
 
@@ -33,7 +33,11 @@
                         <form action="/cart/reduce/<%= cart.id %>?_method=PUT" method="POST" data-id="<%= cart.id %>" class="reduceCart">
                             <input type="submit" value="-" class="btn btn-outline-success">
                         </form>
-                        <span id="qty<%= cart.id %>"><span id="qty2<%= cart.id %>"><%= cart.qty %></span></span>
+
+                        <span id="qty<%= cart.id %>">
+                            <span id="qty2<%= cart.id %>" style="margin: 10px;"><%= cart.qty %> </span>
+                        </span>
+
                         <form action="/cart/increase/<%= cart.id %>?_method=PUT" method="POST" data-id="<%= cart.id %>" class="increaseCart">
                             <input type="submit" value="+" class="btn btn-outline-success">
                         </form>
@@ -49,8 +53,11 @@
             <%})
         %>
     </table>
-    <h1 id="total1"><span id="total2">Total: <%= total %> VND</span>
-    </h1><a href="/cart/checkout/" class="btn btn-outline-success" style="float: right; width:50%">C H E C K  O U T</a>
+    <h1 id="total1">
+        <span id="total2">Total: <%= Intl.NumberFormat().format(total) %> VND</span>
+    </h1>
+    <a href="/cart/checkout/" class="btn btn-outline-success" style="float: right; width:40%">C H E C K  O U T</a>
+    <a href="/" class="btn btn-outline-success" style="float: left; width:40%">M E N U</a>
 
 
 </div>

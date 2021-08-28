@@ -53,13 +53,10 @@ router.delete('/:id', (req, res) => {
         const cart = new cartModel(req.session.cart)
         cart.delete(id)
         req.session.cart = cart
-        res.send("Update successfully")
-            // res.redirect('/cart')
+        res.send('Delete successful!')
     } catch (e) {
-
-        // res.redirect('/')
-        res.send("delete failed")
-        console.log(e.message)
+        console.log(e)
+        res.send('Delete failed!')
     }
 })
 router.put('/reduce/:id', (req, res) => {
@@ -116,7 +113,7 @@ router.post('/order', check, async(req, res) => {
             address: req.session.address
         })
         req.session.cart = null
-        req.flash("success", "Order successfully ")
+        req.flash("success", "Thanh toán thành công! ")
         await order.save()
         res.redirect('/')
 

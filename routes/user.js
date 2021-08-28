@@ -52,6 +52,8 @@ router.delete('/delete/:id', async(req, res) => {
 })
 
 router.get('/register', (req, res) => {
+
+
     res.render('users/register')
 })
 
@@ -71,7 +73,7 @@ function check(req, res, next) {
     }
     res.redirect('/user/login')
 }
-router.get('/profile', check, (req, res) => {
+router.get('/profile', check, async(req, res) => {
     let value = "No Name"
     if (req.user) {
         value = "name: " + req.user.username

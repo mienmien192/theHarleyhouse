@@ -2,6 +2,7 @@ const categoryModel = require('../models/category.model')
 const productModel = require('../models/product.model')
 const express = require('express')
 const router = express.Router()
+
 router.get('/', async(req, res) => {
     try {
         const products = await productModel.find().populate('category', ['name'])
@@ -14,6 +15,18 @@ router.get('/', async(req, res) => {
 
 })
 
+//search products by name
+router.get('/search', async(req, res) => {
+    const name = req.query.name
+
+
+    const products = await productModel.find().populate('category', ['name'])
+    const result = products.filter(function(product) {
+        return product.category.name.toLowerCase().indexOf(name.toLowerCase()) !== -1
+    })
+    console.log(result)
+    res.render('products/search', { products: result });
+})
 
 router.get('/add', async(req, res) => {
     const product = new productModel()

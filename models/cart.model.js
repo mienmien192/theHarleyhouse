@@ -15,6 +15,7 @@ function cart(cart_old) {
     }
     this.delete = function(id) {
         const index = this.items.findIndex(s => s.id === id)
+        this.priceTotal -= this.items[index].item.price * this.items[index].qty
         this.items.splice(index, 1)
     }
     this.increase = (id) => {

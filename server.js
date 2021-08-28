@@ -35,6 +35,7 @@ const connectFunc = async() => {
         console.log("connection failed")
     }
 }
+
 connectFunc()
 app.use(session({
     secret: 'keyboard cat',

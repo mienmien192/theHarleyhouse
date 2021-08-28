@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     name: { type: String, required: true, default: "Tra xanh" },
-    info: { type: String, default: "baucua" },
+    info: { type: String },
     price: { type: Number, default: 20000 },
     quantity: { type: Number, default: 4 },
     category: { type: mongoose.Schema.Types.ObjectId, ref: "category" }, //tham chieu toi table category

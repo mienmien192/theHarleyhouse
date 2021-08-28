@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3" style=" background: #000;font-family: 'Anton', sans-serif; ">
+<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 fixed-top" style=" background: #000;font-family: 'Anton', sans-serif; ">
     <div class="container-fluid">
         <strong><a class="navbar-brand" href="/" style="margin-left:70px" > <img src="/img/logo.png" alt="" width="300" height="50"> </a></strong>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,8 +94,8 @@
                 </li>
 
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="/product/search" method="GET">
+                <input required class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="name" id="name">
                 <button class="btn btn-outline-light" style="background:#ea8025;" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
