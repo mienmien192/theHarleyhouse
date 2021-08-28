@@ -19,16 +19,29 @@ router.get('/add', (req, res) => {
     res.render('categories/add', { category: category })
 })
 
+// Edit Category
 router.get('/edit/:id', async(req, res) => {
     try {
-        const category = categoryModel.findById(req.params.id)
+        const category = await categoryModel.findById(req.params.id)
         res.render('categories/edit', { category: category })
     } catch (e) {
-        console.log(e.message)
+        console.log(e)
         res.redirect('/')
     }
-
 })
+
+router.put('/edit/:id', async(req, res) => {
+    try {
+        const category = await categoryModel.findById(req.params.id)
+        category.name = req.body.name
+        await category.save()
+        res.redirect('/category')
+    } catch (e) {
+        console.log(e)
+        res.redirect('/')
+    }
+})
+
 router.post('/', async(req, res) => {
     try {
         const categoryNew = new categoryModel({

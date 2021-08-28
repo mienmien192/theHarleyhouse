@@ -22,7 +22,7 @@
                             <%= pro.info%>
                         </p>
                         <h4>
-                            <%= pro.price%> Đ
+                            <%=  Intl.NumberFormat().format(pro.price )%> Đ
                         </h4>
                         <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-outline-dark">Mua ngay</a>
                         <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-dark" style="color: #fff;">Tìm hiểu thêm</a>

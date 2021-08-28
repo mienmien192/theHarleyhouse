@@ -35,13 +35,13 @@ router.get('/add', async(req, res) => {
 })
 router.get('/edit/:id', async(req, res) => {
     try {
-        const category = categoryModel.findById(req.params.id)
-        res.render('categories/edit', { category: category })
+        const product = await productModel.findById(req.params.id)
+        const categories = await categoryModel.find()
+        res.render('products/edit', { product: product, categories: categories })
     } catch (e) {
-        console.log(e.message)
+        console.log(e)
         res.redirect('/')
     }
-
 })
 router.post('/', async(req, res) => {
 
