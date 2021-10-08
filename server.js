@@ -19,6 +19,7 @@ app.set('view engine', 'ejs')
 app.use(methodOverride('_method'))
 app.use(expressLayouts);
 app.set('layout', 'layouts/layout')
+app.set('function', 'functions/recruitment')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false, limit: '10mb' })) //giup doc req.body
 const connectFunc = async() => {
