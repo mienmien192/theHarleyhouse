@@ -5,6 +5,7 @@ const categoryRouter = require('./routes/category')
 const productRouter = require('./routes/product')
 const session = require('express-session')
 const cartRouter = require('./routes/cart')
+const staticRouter= require('./routes/static')
 require('dotenv').config()
 const app = express()
 
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use(passport.initialize()) //goi thu vien 
 app.use(passport.session())
 app.use('/', indexRouter)
+app.use('/static',staticRouter)
 app.use('/category', categoryRouter)
 app.use('/product', productRouter)
 app.use('/cart', cartRouter)
