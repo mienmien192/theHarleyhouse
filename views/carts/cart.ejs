@@ -1,17 +1,18 @@
 <div class="container mt-5">
     <center>
-        <h1 style="color: green;margin-top:100px">List Cart</h1>
+        <h1 style="color: rgb(153, 106, 18);margin-top:100px">Cart</h1>
     </center>
 
     <hr>
-    <table class="table table-success table-striped">
+    <table class="table table-info table-striped">
         <tr>
             <th>Name</th>
-            <th>Price</th>
             <th>Image</th>
+           
             <th>Quantity</th>
+            <th>Price</th>
 
-            <th><i class="fa fa-trash" style="font-size: 20px; "></i></th>
+            <th>Operation</th>
 
         </tr>
 
@@ -22,10 +23,10 @@
                 <th>
                     <%=  cart.item.name  %>
                 </th>
-                <th>
-                    <%= Intl.NumberFormat().format(cart.item.price)   %>
-                </th>
+
                 <th><img src="<%= cart.imageSrc %>" alt="" width="50px"></th>
+            
+              
 
 
                 <th>
@@ -34,8 +35,8 @@
                             <input type="submit" value="-" class="btn btn-outline-success">
                         </form>
 
-                        <span id="qty<%= cart.id %>">
-                            <span id="qty2<%= cart.id %>" style="margin: 10px;"><%= cart.qty %> </span>
+                        <span id="qty<%= cart.id %>" style="margin-top: 6px;">
+                            <span id="qty2<%= cart.id %>" style="margin: 10px; padding: 5px;"><%= cart.qty %> </span>
                         </span>
 
                         <form action="/cart/increase/<%= cart.id %>?_method=PUT" method="POST" data-id="<%= cart.id %>" class="increaseCart">
@@ -43,10 +44,17 @@
                         </form>
                     </div>
                 </th>
+                
+                <th >
+                    <%= Intl.NumberFormat().format(cart.item.price)   %>
+                </th>
 
                 <th>
                     <form action="/cart/<%= cart.id %>?_method=DELETE" method="POST" data-id="<%= cart.id %>" class="deleteCart">
-                        <input type="submit" value="Delete" class="btn btn-outline-danger">
+                       
+                        <button class="btn btn-danger" type="submit" value="Delete" ><i class="fa fa-trash" style="font-size: 20px; "></i></button>
+                        
+                    
                     </form>
                 </th>
             </tr>
@@ -54,7 +62,7 @@
         %>
     </table>
     <h1 id="total1">
-        <span id="total2">Total: <%= Intl.NumberFormat().format(total) %> VND</span>
+        <span id="total2" >Total: <%= Intl.NumberFormat().format(total) %> VND</span>
     </h1>
     <a href="/cart/checkout/" class="btn btn-outline-success" style="float: right; width:40%">C H E C K  O U T</a>
     <a href="/" class="btn btn-outline-success" style="float: left; width:40%">M E N U</a>
