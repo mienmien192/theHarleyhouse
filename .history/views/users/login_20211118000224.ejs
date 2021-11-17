@@ -1,0 +1,35 @@
+<div style="padding: 50px; width: 300px" class="container mt-50 w-50">
+    <center>
+        <h1><strong>LOGIN</strong></h1>
+    </center>
+   
+    <!-- <a href="/user/twitter" style="width: 100%;" class="btn btn-outline-success mt-2"><i class="fab fa-twitter-square" style="font-size:20px"></i> Login with Twitter</a> -->
+
+    <%- include("../part/message") %>
+        <form  action="/user/login" method="POST">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control mt-4" id="floatingInput" placeholder="Email" name="email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="password">
+                <label for="floatingInput">Password</label>
+            </div>
+            <div class="forgot">
+                <a href="#">Quên mật khẩu</a>
+            </div>
+            
+            <div class="form-floating mt-3 ">
+                <!-- <input type="submit" class=" form-control btn btn-outline-success" id="floatingSubmit" value="Submit"> -->
+                <button style="padding: 20px;"  class="btn btn-primary form-control" type="login" value="Login" id="floatingLogin">Login</button>
+            </div>
+        </form>
+
+    
+    <div class="social">
+        <!-- <a href="/user/github" style="width: 80%;" class="btn btn-outline-dark mt-2"><i class="fa fa-github-square" style="font-size:20px; " ></i> Login with Github</a> <br> -->
+        <a href="/user/google" style="width: 60%;" class="btn btn-outline-danger mt-2"><i style="font-size:20px" class="fa fa-google-plus-square"></i> Login with Google</a> <br>
+        <a href="/user/facebook" style="width: 60%;" class="btn btn-outline-primary mt-2"><i class="fa fa-facebook-square" style="font-size:20px"></i> Login with Facebook</a> <br>
+
+    </div>
+</div>

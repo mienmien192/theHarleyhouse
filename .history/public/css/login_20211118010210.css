@@ -1,0 +1,11 @@
+.main{
+    margin-top: 70px;
+  }
+.forgot~a{
+    float: right; 
+    width: 160px;
+}
+.btn-primary{
+    background-color: red !important;
+    border: none;
+}

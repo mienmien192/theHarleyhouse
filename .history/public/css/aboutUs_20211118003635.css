@@ -1,0 +1,67 @@
+
+
+.category{
+  width: 100%;
+  border: 1px solid #000;
+  font-family:'Quicksand', sans-serif;
+
+}
+.category h5{
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.category .link a {
+  width: 100%;
+  display: inline-block;
+  padding: 12px;
+  text-decoration: none;
+  border-bottom: 2px dotted #ccc;
+  color: #000;
+}
+.category .link a:hover{
+  opacity: 0.5;
+}
+.category .link a:nth-child(9){
+  border-bottom: none;
+}
+
+.cofee img{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  transition: transform 100s linear;
+  overflow: hidden;
+}
+.cofee:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.cofee img:hover{
+  border-radius: 10px;
+} 
+
+
+
+
+.about h1{
+  font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+} 
+.about img{
+  width: 50%;
+  height: 50vh;
+  padding: 5px 10px;
+}
+
+.info {
+  font-family:'Quicksand', sans-serif;
+  text-align: center;
+}
+.info p{
+  text-align: justify;
+  padding: 10px 20px;
+}
