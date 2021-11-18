@@ -120,3 +120,7 @@
 .product-card:hover {
     transform: translate3d(5px, -5%, 3em);
 }
+
+.content1 {
+    background: url(../img/background.png);
+}
