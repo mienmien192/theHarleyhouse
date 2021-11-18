@@ -1,10 +1,12 @@
-.main{
+.main {
     margin-top: 70px;
-  }
-.forgot>a{
-    
 }
-.btn-primary{
-    background-color: red !important;
+
+.btn-primary {
+    background: linear-gradient(to right, #955722, #865124, #664327, #3e210d, #341b0a) !important;
     border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to left, #955722, #865124, #664327, #3e210d, #341b0a) !important;
 }

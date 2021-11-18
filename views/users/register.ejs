@@ -1,9 +1,9 @@
-<div style="background-image: url( https://image.freepik.com/free-photo/top-view-bowls-with-coffee-beans-powder_23-2148937321.jpg ) ; background-size: cover; padding: 0; margin: 0; ">
-    <div class="container mt-5 w-50" style="padding: 50px; background-color: rgba(255,255,255,.7);">
+<div style="background-image: url( https://image.freepik.com/free-photo/top-view-bowls-with-coffee-beans-powder_23-2148937321.jpg ) ; background-size: cover; background-repeat: no-repeat; height: 81vh">
+    <div class="container mt-5 w-50" style="padding: 50px; background-color: rgba(255,255,255,.5); height: 81vh">
         <center>
-            <h1>REGISTER</h1>
+            <h1>ĐĂNG KÝ</h1>
         </center>
-        
+
         <form action="/user" method="POST">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
@@ -18,7 +18,10 @@
                 <label for="floatingInput">Password</label>
             </div>
             <div class="form-floating mt-3">
-                <input type="submit" class="form-control btn btn-outline-success" style="padding: 20px;" id="floatingSubmit" value="Submit">
+                <input type="submit" class="form-control btn btn-primary" style="padding: 20px;" id="floatingSubmit" value="ĐĂNG KÝ">
+            </div>
+            <div class="account mt-3 d-flex justify-content-end">
+                <p>Đã có tài khoản? <a href="/user/login" style="color: #341b0a">Đăng nhập</a></p>
             </div>
         </form>
     </div>
