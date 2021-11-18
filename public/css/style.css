@@ -5,7 +5,7 @@
 }
 
 .footer-main {
-    background: linear-gradient(to left,#955722, #865124, #664327, #3e210d, #341b0a);
+    background: linear-gradient(to left, #955722, #865124, #664327, #3e210d, #341b0a);
     color: #fff;
     padding: 20px;
 }
@@ -18,7 +18,6 @@
 .navbar {
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
-
 }
 
 .main {
@@ -78,36 +77,46 @@
     display: block;
 }
 
-.social{
+.social {
     margin-top: 100px;
     text-align: center;
 }
-.social-footer a:nth-child(2):hover{
+
+.social-footer a:nth-child(2):hover {
     background-color: #273c75;
     color: #fff;
     transition: 2s;
-  transform: rotateY(360deg);
-
+    transform: rotateY(360deg);
 }
-.social-footer a:nth-child(3):hover{
+
+.social-footer a:nth-child(3):hover {
     background-color: #fff;
     color: #0984e3;
     transition: 2s;
-  transform: rotateY(360deg);
-
+    transform: rotateY(360deg);
 }
-.social-footer a:nth-child(4):hover{
+
+.social-footer a:nth-child(4):hover {
     background-color: #e84118;
     color: #fff;
     transition: 2s;
-  transform: rotateY(360deg);
-
+    transform: rotateY(360deg);
 }
 
-.social-footer a:nth-child(5):hover{
+.social-footer a:nth-child(5):hover {
     background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
     color: #fff;
     transition: 2s;
-  transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
 
+.row .user-information::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    border-bottom: 2px solid #fa8c16;
+}
+
+.product-card:hover {
+    transform: translate3d(5px, -5%, 3em);
 }

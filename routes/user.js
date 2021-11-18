@@ -30,7 +30,7 @@ router.post('/', async(req, res) => {
         })
         await user.save()
         req.flash("success", "Insert successfull")
-        res.redirect('/user')
+        res.redirect('/')
 
     } catch (e) {
         req.flash("error", "Insert failed")
@@ -52,8 +52,6 @@ router.delete('/delete/:id', async(req, res) => {
 })
 
 router.get('/register', (req, res) => {
-
-
     res.render('users/register')
 })
 
@@ -61,7 +59,7 @@ router.get('/login', (req, res) => {
     res.render('users/login')
 })
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/user/profile',
+    successRedirect: '/',
     failureRedirect: '/user/login',
     failureFlash: true
 
@@ -76,15 +74,16 @@ function check(req, res, next) {
 router.get('/profile', check, async(req, res) => {
     let value = "No Name"
     if (req.user) {
-        value = "name: " + req.user.username
+        value = req.user.username
     }
 
     res.render('users/profile', { name: value })
 })
-router.get('/logout'), (req, res) => {
+
+router.get('/logout', (req, res) => {
     req.logout()
     res.redirect('login')
-}
+})
 
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
