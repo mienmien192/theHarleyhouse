@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const chatBot = require('../models/chatBot')
 
 
 router.get('/coffeeStory', (req, res) => {
@@ -25,5 +26,11 @@ router.get('/news', (req, res) => {
 
 router.get('/allProduct', (req, res) => {
     res.render('functions/allProduct')
+})
+router.get('/webhook', (req, res) => {
+    res.render(chatBot.getWebhook)
+})
+router.post('/webhook', (req, res) => {
+    res.render(chatBot.postWebhook)
 })
 module.exports = router

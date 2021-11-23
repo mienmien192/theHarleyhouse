@@ -15,8 +15,6 @@ router.get('/', async(req, res) => {
     }
 
 })
-router.get('/webhook', chatBot.getWebhook);
-router.post('/webhook', chatBot.postWebhook);
 
 
 
