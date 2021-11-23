@@ -13,9 +13,15 @@ router.get('/', async(req, res) => {
         console.log(e)
         res.redirect('/')
     }
-    router.get('/webhook', chatBot.getWebhook);
-    router.post('/webhook', chatBot.postWebhook);
+
 })
+router.get('/webhook', (req, res) => {
+    res.render(chatBot.getWebhook)
+});
+
+router.post('/webhook', (req, res) => {
+    res.render(chatBot.postWebhook)
+});
 
 
 
