@@ -11,7 +11,7 @@ $('.addToCart').click(function(event) {
         type: 'GET',
         data: {},
         success: function() {
-            swal("Add successful!", "continute!", "success");
+            swal("Đã thêm vào giỏ hàng!", "cảm ơn", "success");
             $("#numCart1").load(root + " #numCart2");
         }
     })
@@ -30,7 +30,7 @@ $('.deleteCart').on("submit", function(event) {
         type: 'DELETE',
         data: {},
         success: function() {
-            swal("Delete successful!", "continute!", "success");
+            swal("Đã xóa sản phẩm!", "Tiếp tục mua!", "success");
             $("#total1").load(root + "/cart #total2");
             $(tr_cart_id).empty();
             $("#numCart1").load(root + "/cart #numCart2");
@@ -49,7 +49,7 @@ $('.reduceCart').on("submit", function(event) {
         type: 'PUT',
         data: {},
         success: function() {
-            swal("Edit successful!", "continute!", "success");
+            swal("Đã bỏ ra khỏi giỏ!", "tiếp tục mua", "success");
             $("#total1").load(root + "/cart #total2");
             $("#qty" + id).load(root + "/cart " + qty2);
             $("#numCart1").load(root + "/cart #numCart2");
@@ -71,7 +71,7 @@ $('.increaseCart').on("submit", function(event) {
         type: 'PUT',
         data: {},
         success: function() {
-            swal("Edit successful!", "continute!", "success");
+            swal("Thêm thành công!", "tiếp tục!", "success");
             $("#total1").load(root + "/cart #total2");
             $("#qty" + id).load(root + "/cart " + qty2);
             $("#numCart1").load(root + "/cart #numCart2");

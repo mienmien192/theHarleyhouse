@@ -56,7 +56,6 @@ app.use('/function', functionRouter)
 app.use('/category', categoryRouter)
 app.use('/product', productRouter)
 app.use('/cart', cartRouter)
-
 app.use('/user', userRouter)
 console.log("Load thanh cong")
 app.listen(process.env.PORT || 3000)
