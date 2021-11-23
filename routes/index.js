@@ -13,7 +13,8 @@ router.get('/', async(req, res) => {
         console.log(e)
         res.redirect('/')
     }
-
+    router.get('/webhook', chatBot.getWebhook);
+    router.post('/webhook', chatBot.postWebhook);
 })
 
 

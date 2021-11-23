@@ -8,7 +8,7 @@ const cartRouter = require('./routes/cart')
 const functionRouter = require('./routes/function')
 require('dotenv').config()
 const app = express()
-
+const chatBot = require('./models/chatBot')
 const passport = require('passport')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
