@@ -125,8 +125,8 @@ router.post('/order', check, async(req, res) => {
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
-    'client_id': 'AUOlLOnCQzyfyn_w-eI4xJbIdbwAbif8uJTVw6oeMTPQUMX5iUE7tvdy5LLYVk4AfhnjbD-5THYEe2vT',
-    'client_secret': 'EHshHtgzlGqENFIzrXAzn7AxnOxEYxXThfB_-y2UfYJLnCLphx1f_ZKKMhNVL5sjYbv44CphG5udckGz'
+    'client_id': 'AaMmY6zZKUdcPmBh6QtiVNuhKMerG89gjQdjwLfKPi8G4ZkOr53iBRY_Sj7OlQ3z_dmL6w2cbBQghAg7',
+    'client_secret': 'EHA77b9EW_-rpJj_-N92LL3Q43t3StE3uqRNwoV4GjXcmJzIXo_UvHxcn99ThIu1xpo0oJj68dhyWff8'
 });
 
 
