@@ -3,7 +3,7 @@ const router = express.Router()
 const cartModel = require('../models/cart.model')
 const orderModel = require('../models/order.model')
 const productModel = require('../models/product.model')
-const paypal = require('paypal-node-sdk')
+const paypal = require('paypal-rest-sdk')
 router.get('/', async(req, res) => {
     try {
         // req.session.cart=null
