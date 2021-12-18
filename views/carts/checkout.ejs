@@ -1,50 +1,75 @@
-<div style="padding: 20px;" class="container mt-5">
-    <%- include('../part/message') %>
+<div class="checkout_form">
+    <h4>Chi tiết đơn hàng</h4>
+    <form action="/cart/order" method="POST">
         <div class="row">
-            <div class="col-sm-6">
-                <a href="/" class="btn btn-outline-success">Go back</a>
-                <div class="form-group">
-                    <form action="/cart/order" method="POST" style="padding: 50px;">
-                        <div class="form-floating w-20 mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Name" required>
-                            <label for="floatingInput">Name</label>
+            <div class="col-sm-8 col-md-6 ">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checkout_input">
+                            <p>Tên <span>*</span></p> 
+                            <input type="text" required>
                         </div>
-                        <div class="form-floating w-20 mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Address" required>
-                            <label for="floatingInput">Address</label>
-                        </div>
-                        <div class="form-floating w-20">
-                            <input type="text" class="form-control" id="floatingPassword" placeholder="Phone" required>
-                            <label for="floatingPassword">Phone</label>
-                        </div>
-                        <input type="submit" class="order btn btn-primary mt-3 px-5 mb-5" value="Order" name="order">
+                    </div>
 
+                    <div class="col-lg-6">
+                        <div class="checkout_input">
+                            <p>Họ <span>*</span></p> 
+                            <input type="text" required>
+                        </div>
+                    </div>
+                </div>
 
-                    </form>
-                    <a href="/cart/pay" style="width: 200px; font-size:20px; color:#3498db; font-weight:bold;font-style: oblique;" class="btn btn-warning mt-2">
+                    <div class="checkout_input">
+                        <p>Địa chỉ <span>*</span></p> 
+                        <input type="text" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="checkout_input">
+                                <p>Số điện thoại <span>*</span></p> 
+                                <input type="number" required>
+                            </div>
+                        </div>
+    
+                        <div class="col-lg-6">
+                            <div class="checkout_input">
+                                <p>Email <span>*</span></p> 
+                                <input type="email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                
+            </div>
+            <div class="col-sm-4 col-md-6 ">
+               <div class="checkout_order">
+                   <h4>Đơn hàng</h4>
+                   <div class="checkout_order_products">Sản phẩm <span>Tổng cộng</span></div>
+                  <div class="checkout_order_products_list" >
+                    <%
+                    products.forEach(product=> {%>
+                                <div style=" margin-top:20px;margin-bottom:20px; font: 1em sans-serif; ">
+                                    <%= product.item.name %>:
+                                    <div class="qty"><div class="qty_num"> <%= product.qty %></div> </div>
+                                    
+                                            <span> <%= product.item.price*product.qty %> ₫</span>
+                                            
+                                </div>
+                                <%})
+                    %>
+                  </div>
+                <div class="checkout__order__total" >Tổng tiền  <span><%= total %> ₫</span></div>
+                <input type="submit" class="order btn btn-primary mt-3 px-5 mb-5" value="Order" name="order">
+                <a href="/cart/pay" style="background-color: #ffc439; float: right; width: 200px; font-size:14px; color:#3498db; font-weight:bold;font-style: oblique; margin-top: 16px;" class="btn btn-warning ">
                         <i class="fa fa-paypal" style="font-size: 20px;"></i> <span style="color:navy; ">Pay</span>Pal</a> <br>
                 </div>
+                </div>
             </div>
-            <div class=" col-sm-6 mt-5">
-
-                <%
-        products.forEach(product=> {%>
-                    <div style="width: 50%; margin-top:20px;margin-bottom:20px; background: orange;">
-                        <%= product.item.name %>:(
-                            <%= product.qty %>)
-                                <span>--</span>
-                                <%= product.item.price*product.qty %> vnđ
-                    </div>
-                    <%})
-        %>
-                        <div class="total">
-                            <h1>Tổng tiền:
-                                <%= total %> vnđ
-                            </h1>
-
-
-                        </div>
-            </div>
-
         </div>
+
+       
+
+    </form>
 </div>
+

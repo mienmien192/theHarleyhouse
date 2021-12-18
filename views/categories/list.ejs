@@ -1,16 +1,16 @@
 <div class="container mt-5">
     <center>
-        <h1 style="color: green; margin-top:100px">List Categories</h1>
+        <h1 style="color: green; margin-top:100px">Danh mục sản phẩm</h1>
     </center>
-    <a href="/category/add" type="button" class="btn btn-outline-success">Add New Category</a> <br>
+    <a href="/category/add" type="button" class="btn btn-outline-success">Thêm danh mục</a> <br>
     <hr>
-    <table class="table table-success table-striped">
+    <table class="table table-light table-striped">
         <tr>
-            <th>Name</th>
+            <th>Tên danh mục</th>
 
-            <th>Edit</th>
+            <th>Sửa</th>
 
-            <th>Delete</th>
+            <th>Xóa</th>
 
         </tr>
         <%
@@ -19,7 +19,7 @@
                 <td>
                     <%= cate.name %>
                 </td>
-                <td><a href="/category/edit/<%= cate._id %>" class="btn btn-success">Edit</a></td>
+                <td><a href="/category/edit/<%= cate._id %>" class="btn btn-success">Sửa</a></td>
                 <td>
                     <%- include('../part/deleteForm',{url:`/category/delete/${cate._id}`}) %>
                 </td>
