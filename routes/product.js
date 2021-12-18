@@ -8,12 +8,15 @@ router.get('/', async(req, res) => {
         const products = await productModel.find().populate('category', ['name'])
 
         res.render('products/list', { products: products })
+        
     } catch (e) {
         console.log(e.message)
         res.redirect('/')
     }
 
 })
+
+
 
 //search products by name
 router.get('/search', async(req, res) => {

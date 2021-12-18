@@ -1,7 +1,21 @@
 const express = require('express')
 const router = express.Router()
+const categoryModel = require('../models/category.model')
+const productModel = require('../models/product.model')
 
+router.get('/allProduct', async(req, res) => {
+    try {
+        const products = await productModel.find().populate('category', ['name'])
 
+        
+    res.render('functions/allProduct', { products: products })
+        
+    } catch (e) {
+        console.log(e.message)
+        res.redirect('/')
+    }
+
+})
 router.get('/coffeeStory', (req, res) => {
 
     res.render('functions/coffeeStory')

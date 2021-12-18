@@ -26,13 +26,13 @@ module.exports = function(passport) {
             console.log(user)
             if (!user) {
 
-                return done(null, false, { message: "No user with that mail" })
+                return done(null, false, { message: "Không tồn tại" })
             }
             try {
                 if (await bcrypt.compare(password, user.password)) { //tham so thu nhat la chuoi chua dc ma hoa, tham so thu 2 dai hon
                     return done(null, user) //user la du lieu thong bao da dang nhap (user luu tru du lieu)
                 }
-                return done(null, false, { message: 'password incorrect' })
+                return done(null, false, { message: 'Mật khẩu không chính xác' })
             } catch (e) {
                 return done(e)
             }
