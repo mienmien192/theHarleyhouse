@@ -145,14 +145,14 @@ router.get('/pay', (req, res) => {
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "1.00",
+                    "price": "20.00",
                     "currency": "USD",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "USD",
-                "total": "1.00"
+                "total": "20.00"
             },
             "description": "This is the payment description."
         }]
