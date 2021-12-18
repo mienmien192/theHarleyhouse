@@ -67,21 +67,25 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart/"><i class="fa fa-shopping-cart"></i>
-                        <span id="numCart1">
-                            <span id="numCart2">(
-                                <%
-                                if(session.cart){%>
-                                    <%= session.cart.items.length %>
-                                  <%}
-                                  else{%>
-                                    0
-                                <%}
-                                 %>
-                                 )
-                            </span>
-                        </span></a>
+                    <a class="nav-link nav-cart" href="/cart"><i style="font-size: 24px;" class="fa fa-shopping-cart" ></i> 
+                      <div class="num">
+                      <span id="numCart1">
+                        <span id="numCart2" style="font-size:12px; ">
+        
+                      <%
+                      if(session.cart){%>
+                          <%= session.cart.items.length %>
+                        <%}
+                        else{%>
+                          0
 
+                      <%}
+                       %>
+        
+                    </span>
+                    </span>
+                  </div>
+                    </a>
                 </li>
 
             </ul>

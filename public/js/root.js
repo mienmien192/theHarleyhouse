@@ -52,6 +52,7 @@ $('.reduceCart').on("submit", function(event) {
             swal("Đã bỏ ra khỏi giỏ!", "tiếp tục mua", "success");
             $("#total1").load(root + "/cart #total2");
             $("#qty" + id).load(root + "/cart " + qty2);
+            $("#temp1").load(root + "/cart #temp2");
             $("#numCart1").load(root + "/cart #numCart2");
             if ($(qty2).text() === '1') {
                 $(tr_cart_id).empty();
@@ -73,6 +74,7 @@ $('.increaseCart').on("submit", function(event) {
         success: function() {
             swal("Thêm thành công!", "tiếp tục!", "success");
             $("#total1").load(root + "/cart #total2");
+            $("#temp1").load(root + "/cart #temp2");
             $("#qty" + id).load(root + "/cart " + qty2);
             $("#numCart1").load(root + "/cart #numCart2");
             if ($(qty2).text() === '1') {

@@ -8,6 +8,11 @@
     background: linear-gradient(to left, #955722, #865124, #664327, #3e210d, #341b0a);
     color: #fff;
     padding: 20px;
+    margin-top: 100px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    left: 0;
 }
 
 .footer-main a {
@@ -143,4 +148,24 @@
 
 #myBtn:hover {
     background-color: #000;
+}
+
+.navbar .num {
+    width: 20px;
+    height: 20px;
+    border: 1px solid orange;
+    border-radius: 50%;
+    text-align: center;
+    background-color: orange;
+    margin-left: 20px;
+    margin-top: -40px;
+    font-weight: 500;
+}
+
+#numCart2 {
+    font-size: 12px;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -0px;
 }
