@@ -130,15 +130,15 @@ paypal.configure({
 });
 
 
-router.get('cart/pay', (req, res) => {
+router.get('/pay', (req, res) => {
     const create_payment_json = {
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/cart/success",
-            "cancel_url": "http://localhost:3000/cart/cancel"
+            "return_url": "https://theharleyhouse.herokuapp.com/cart/success",
+            "cancel_url": "https://theharleyhouse.herokuapp.com/cart/cancel"
         },
         "transactions": [{
             "item_list": {
