@@ -1,0 +1,53 @@
+<div class="container " style="margin-top: 155px;">
+    <center>
+        <h1 style="color: green; margin-top:100px">Danh sách sản phẩm</h1>
+    </center>
+    <a href="/product/add" type="button" class="btn btn-outline-success">Thêm sản phẩm</a> <br>
+    <hr>
+    <table class="table table-light table-striped">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Thông tin</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Danh mục</th>
+            <th>Hình ảnh</th>
+            <th>Sửa</th>
+
+            <th>Xóa</th>
+
+        </tr>
+        <%
+        products.map(pro=>{%>
+            <tr>
+                <td>
+                    <%= pro.name %>
+                </td>
+                <td>
+                    <%=  pro.info %>
+                </td>
+                <td>
+                    <%=  pro.price %>
+                </td>
+                <td>
+                    <%=  pro.quantity %>
+                </td>
+                <td>
+                    <%
+                    if(pro.category){%>
+                        <%=  pro.category.name %>
+                            <%}
+                    %>
+                </td>
+                <td>
+                    <img src="<%=  pro.imageSrc %>" width="50px" alt="">
+                </td>
+                <td><a href="/product/edit/<%= pro._id %>" class="btn btn-outline-success"><i class="fa fa-edit"></i></a></td>
+                <td>
+                    <%- include('../part/deleteForm',{url:`/product/delete/${pro._id}`}) %>
+                </td>
+            </tr>
+            <%})
+%>
+    </table>
+</div>

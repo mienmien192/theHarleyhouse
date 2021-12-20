@@ -59,7 +59,7 @@ router.post('/delete/:id', async(req, res) => {
     try {
         const categoryDel = await categoryModel.findById(req.params.id)
         await categoryDel.remove()
-        res.redirect('/')
+        res.redirect('/category')
     } catch (e) {
         console.log(e)
         res.redirect('/')

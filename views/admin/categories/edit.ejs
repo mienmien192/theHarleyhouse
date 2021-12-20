@@ -1,0 +1,6 @@
+<div class="container mt-5 mb-5 w-50">
+    <h3 class="title-head text-center mb-4" style=" margin-top:100px; ">Sửa danh mục</h3>
+    <form action="/category/edit/<%= category._id %>?_method=PUT" method="POST">
+        <%- include('./form') %>
+    </form>
+</div>

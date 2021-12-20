@@ -1,0 +1,41 @@
+<div class="container my-3 mt-5" style="font-family: 'Anton', sans-serif;">
+    <center>
+        <h1 style=" margin-top:100px">Kết quả Tìm kiếm</h1>
+    </center> <br><br>
+    <div class="row">
+        <!-- <form action="/product/search" method="GET"> -->
+        <%
+                products.map(pro=>{%>
+            <div class="row-sm-6 col-md-4 ">
+                <div class="product-card" style="background:#ffbe76">
+                    <div class="img">
+                        <center><img src="<%= pro.imageSrc %>" width="100%" alt=""></center>
+                    </div>
+                    <br>
+                    <div class="content">
+                        <a href="">
+                            <h3>
+                                <%= pro.name%>
+                            </h3>
+                        </a>
+                        <p>
+                            <%= pro.info%>
+                        </p>
+                        <h4>
+                            <%=  Intl.NumberFormat().format(pro.price )%> Đ
+                        </h4>
+                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-outline-dark">Mua ngay</a>
+                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-dark" style="color: #fff;">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <%})
+           %>
+                <br>
+                <!-- </form> -->
+    </div>
+    <hr> <br>
+
+
+</div>
