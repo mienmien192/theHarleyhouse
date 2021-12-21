@@ -46,6 +46,17 @@ router.get('/edit/:id', async(req, res) => {
         res.redirect('/')
     }
 })
+router.put('/edit/:id', async(req, res) => {
+    try {
+        const product = await productModel.findById(req.params.id)
+        product.name = req.body.name
+        await product.save()
+        res.redirect('/admin/product')
+    } catch (e) {
+        console.log(e)
+        res.redirect('/')
+    }
+})
 router.post('/', async(req, res) => {
 
     try {
