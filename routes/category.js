@@ -6,7 +6,7 @@ router.get('/', async(req, res) => {
     try {
         const categories = await categoryModel.find()
         console.log(categories)
-        res.render('categories/list', { categories: categories })
+        res.render('admin/categories/list', { categories: categories })
     } catch (e) {
         console.log(e.message)
         res.redirect('/')
