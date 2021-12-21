@@ -20,6 +20,10 @@
             <div class="carousel-item">
                 <img src="img/giaohang.png" alt="giaohang" class="d-block" style="width:800px;height:400px;">
             </div>
+            <div class="carousel-item">
+                <img src="img/gianhang.jpg" alt="gianhang" class="d-block" style="width:800px;height:400px;">
+            </div>
+
         </div>
 
         <!-- Left and right controls/icons -->
@@ -42,35 +46,8 @@
             <a href="/function/allProduct" class="btn btn-outline-dark" style="float:right; width:200px; 
             height:40px;text-transform: uppercase;font-family: 'Anton', sans-serif; ">Tất cả sản phẩm</a> <br></h1>
 
-        <%
-            products.map(pro=>{%>
-            <div class="row-sm-6 col-md-4 ">
-                <div class="product-card" style="background:#ffbe76;border-radius: 5px;">
-                    <div class="img">
-                        <center><img src="<%= pro.imageSrc %>" width="100%" alt=""></center>
-                    </div>
-                    <br>
-                    <div class="content">
-                        <a href="">
-                            <h3>
-                                <%= pro.name%>
-                            </h3>
-                        </a>
-                        <p>
-                            <%= pro.info%>
-                        </p>
-                        <h4>
-                            <%= Intl.NumberFormat().format(pro.price)%> Đ
-                        </h4>
-                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-outline-dark">Mua ngay</a>
-                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-dark" style="color: #fff;">Tìm hiểu thêm</a>
-                    </div>
-                </div>
-                <br>
-            </div>
-            <%})
-       %>
-                <br>
+        <img src="/img/Menu.png" alt="">
+        <br>
     </div>
     <hr> <br>
 
@@ -151,7 +128,8 @@
             </div>
             <div class="col-md-6 col-sm-12 pt-3 ">
                 <div class="img">
-                    <img src="/img/store.jpg" alt="" style=" width: 100%;height:400px; margin-left: -12px; ">
+                    <!-- <img src="/img/store.jpg" alt="" style=" width: 100%;height:400px; margin-left: -12px; "> -->
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/AVmFLNF9RCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 

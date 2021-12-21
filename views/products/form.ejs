@@ -20,22 +20,23 @@
 </div>
 <div class="form-floating mb-3">
     <select name="category" class="form-select">
-        <%
-        categories.map(cate=>{%>
             <%
-            if(cate._id==product.category){%>
-                <option selected value="<%= cate._id %>"><%= cate.name %></option>
-            <%}
-            else{%>
-                <option value="<%= cate._id %>"><%= cate.name %><option>
-                <option value="<%= cate._id %>"><%= cate.name %><option>
-                    <%}
+            categories.map(cate=>{%>
+                <%
+                if(cate._id==product.category){%>
+                    <option selected value="<%= cate._id %>"><%= cate.name %></option>
+                <%}
+                else{%>
+                    <option value="<%= cate._id %>"><%= cate.name %><option>
+                    <option value="<%= cate._id %>"><%= cate.name %><option>
+                        <%}
+                %>
+                <%})
             %>
-            <%})
-        %>
-        
-    </select>
+            
+        </select>
 </div>
 <div class="form-floating mt-3">
     <input type="submit" class="form-control btn btn-outline-success" id="floatingSubmit" value="Submit">
 </div>
+</body>
