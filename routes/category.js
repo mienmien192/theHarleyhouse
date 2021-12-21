@@ -14,9 +14,9 @@ router.get('/', async(req, res) => {
 
 })
 
-router.get('/add', (req, res) => {
+router.get('add', (req, res) => {
     const category = new categoryModel()
-    res.render('categories/add', { category: category })
+    res.render('admin/categories/add', { category: category })
 })
 
 // Edit Category
