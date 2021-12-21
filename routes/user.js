@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 router.get('/', async(req, res) => {
     try {
         const users = await userModel.find()
-        res.render('users/index', { users: users })
+        res.render('admin/users/index', { users: users })
     } catch (e) {
         console.log(e)
         res.redirect('/')

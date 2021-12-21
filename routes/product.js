@@ -7,7 +7,7 @@ router.get('/', async(req, res) => {
     try {
         const products = await productModel.find().populate('category', ['name'])
 
-        res.render('products/list', { products: products })
+        res.render('admin/products/list', { products: products })
 
     } catch (e) {
         console.log(e.message)
@@ -28,19 +28,19 @@ router.get('/search', async(req, res) => {
         return product.category.name.toLowerCase().indexOf(name.toLowerCase()) !== -1
     })
     console.log(result)
-    res.render('products/search', { products: result });
+    res.render('admin/products/search', { products: result });
 })
 
 router.get('/add', async(req, res) => {
     const product = new productModel()
     const categories = await categoryModel.find()
-    res.render('products/add', { product: product, categories: categories })
+    res.render('admin/products/add', { product: product, categories: categories })
 })
 router.get('/edit/:id', async(req, res) => {
     try {
         const product = await productModel.findById(req.params.id)
         const categories = await categoryModel.find()
-        res.render('products/edit', { product: product, categories: categories })
+        res.render('admin/products/edit', { product: product, categories: categories })
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -63,7 +63,7 @@ router.post('/', async(req, res) => {
         }
 
         await productNew.save()
-        res.redirect('/product')
+        res.redirect('/admin/product')
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -74,7 +74,7 @@ router.post('/delete/:id', async(req, res) => {
     try {
         const productDelete = await productModel.findById(req.params.id)
         await productDelete.remove()
-        res.redirect('/product')
+        res.redirect('/admin/product')
     } catch (e) {
         console.log(e)
         res.redirect('/')
