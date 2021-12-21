@@ -14,7 +14,7 @@ router.get('/', async(req, res) => {
 
 })
 
-router.get('add', (req, res) => {
+router.get('/add', (req, res) => {
     const category = new categoryModel()
     res.render('admin/categories/add', { category: category })
 })
@@ -23,7 +23,7 @@ router.get('add', (req, res) => {
 router.get('/edit/:id', async(req, res) => {
     try {
         const category = await categoryModel.findById(req.params.id)
-        res.render('categories/edit', { category: category })
+        res.render('admin/categories/edit', { category: category })
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -35,7 +35,7 @@ router.put('/edit/:id', async(req, res) => {
         const category = await categoryModel.findById(req.params.id)
         category.name = req.body.name
         await category.save()
-        res.redirect('/category')
+        res.redirect('/admin/category')
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -48,7 +48,7 @@ router.post('/', async(req, res) => {
             name: req.body.name
         })
         await categoryNew.save()
-        res.redirect('/category')
+        res.redirect('/admin/category')
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -59,7 +59,7 @@ router.post('/delete/:id', async(req, res) => {
     try {
         const categoryDel = await categoryModel.findById(req.params.id)
         await categoryDel.remove()
-        res.redirect('/category')
+        res.redirect('/admin/category')
     } catch (e) {
         console.log(e)
         res.redirect('/')

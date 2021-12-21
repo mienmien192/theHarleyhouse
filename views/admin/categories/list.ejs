@@ -19,9 +19,9 @@
                 <td>
                     <%= cate.name %>
                 </td>
-                <td><a href="/category/edit/<%= cate._id %>" class="btn btn-outline-success"><i class="fa fa-edit"></i></a></td>
+                <td><a href="/admin/category/edit/<%= cate._id %>" class="btn btn-outline-success"><i class="fa fa-edit"></i></a></td>
                 <td>
-                    <%- include('../part/deleteForm',{url:`/category/delete/${cate._id}`}) %>
+                    <%- include('../part/deleteForm',{url:`/admin/category/delete/${cate._id}`}) %>
                 </td>
             </tr>
             <%})
