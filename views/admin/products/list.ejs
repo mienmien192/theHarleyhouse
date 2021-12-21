@@ -43,7 +43,7 @@
                     <td>
                         <img src="<%=  pro.imageSrc %>" width="50px" alt="">
                     </td>
-                    <td><a href="/product/edit/<%= pro._id %>" class="btn btn-outline-success"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="/admin/product/edit/<%= pro._id %>" class="btn btn-outline-success"><i class="fa fa-edit"></i></a></td>
                     <td>
                         <%- include('../part/deleteForm',{url:`/admin/product/delete/${pro._id}`}) %>
                     </td>

@@ -1,14 +1,14 @@
 <div class="container my-3 mt-5" style="font-family: 'Anton', sans-serif;">
     <div class="row">
         <h1 class="menu_home_title line_after_heading" style="font-family: 'Bebas Neue', cursive; margin-top:100px"><strong>MENU </strong>
-             <br></h1>
+            <br></h1>
 
         <%
             products.map(pro=>{%>
             <div class="row-sm-6 col-md-4 ">
-                <div class="product-card" style="background:#ffbe76">
+                <div class="product-card" style="background: #fff2d9; border-radius:10px">
                     <div class="img">
-                        <center><img src="<%= pro.imageSrc %>" width="100%" alt=""></center>
+                        <center><img src="<%= pro.imageSrc %>" width="100%" alt="" style=" box-shadow: 2px 3px 4px rgba(0, 0, 0, .5);border-radius:10px"></center>
                     </div>
                     <br>
                     <div class="content">
@@ -23,8 +23,8 @@
                         <h4>
                             <%= Intl.NumberFormat().format(pro.price)%> Đ
                         </h4>
-                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-outline-dark">Mua ngay</a>
-                        <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-dark" style="color: #fff;">Tìm hiểu thêm</a>
+                        <center> <a href="/cart/add/<%= pro._id %>" class="addToCart btn btn-outline-dark">Mua ngay</a></center>
+
                     </div>
                 </div>
                 <br>
