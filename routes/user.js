@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 router.get('/', async(req, res) => {
     try {
         const users = await userModel.find()
-        res.render('admin/users/index', { users: users })
+        res.render('users/index', { users: users })
     } catch (e) {
         console.log(e)
         res.redirect('/')
@@ -94,21 +94,58 @@ router.get('/google/callback', passport.authenticate('google', {
     }))
     //scope: muốn lấy thêm dlieu gì thì đưa vào []
 
-router.get('/github', passport.authenticate('github'))
-router.get('/github/callback', passport.authenticate('github', {
-    successRedirect: '/user/profile', //if callback right, return profile
-    failureRedirect: '/user/login', //if callback wrong, return login
-    failureFlash: true
-}))
 router.get('/facebook', passport.authenticate('facebook'))
 router.get('/facebook/callback',
-    passport.authenticate('facebook', {
-        successRedirect: '/user/profile',
-        failureRedirect: '/user/login',
-        failureFlash: true
-    }),
-    function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/');
-    })
+        passport.authenticate('facebook', {
+            successRedirect: '/user/profile',
+            failureRedirect: '/user/login',
+            failureFlash: true
+        }),
+        function(req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/');
+        })
+    // Admin Login and Register
+    //Middleware de check isAdmin
+function checkAdmin(req, res, next) {
+    if (req.session.isAdmin) {
+        next()
+    } else {
+        res.redirect("/user/login");
+    }
+}
+
+router.post("/admin/login", passport.authenticate('local'), (req, res) => {
+    if (req.user.isAdmin) {
+        req.session.user_id = req.user._id;
+        req.session.isAdmin = true;
+        return res.status(200).json({
+            "status": "Admin login successfully"
+        });
+    } else {
+        return res.sendStatus(403);
+    }
+})
+
+router.post("/admin/register", async(req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10)
+        const user = new userModel({
+            username: req.body.username,
+            email: req.body.email,
+            password: hashedPassword,
+            isAdmin: 1
+        })
+        await user.save()
+        req.flash("success", "Insert successfull")
+        return res.status(201).send(user);
+
+    } catch (e) {
+        req.flash("error", "Insert failed")
+        console.log(e)
+        res.redirect('/main')
+    }
+})
+
+
 module.exports = router
