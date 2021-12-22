@@ -1,0 +1,127 @@
+.d-banner-desktop {
+    display: block;
+}
+.tcf-banner {
+    height: 70vh;
+}
+.tcf-banner {
+    height: 80vh;
+   
+    /* background: url(/img/tuyendung.jpg) top center no-repeat;*/
+    margin-top: 4.25rem;
+    width: 100%;
+    background-size: cover !important;
+    overflow-x: hidden;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.text-dark-1 {
+    color: #000;
+}
+.tcf-slogan {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9200 0, #ef4d00 100%);
+    margin-bottom: 2rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.d-none {
+    display: none !important;
+}
+
+.tch-questions-apply-section {
+    padding: 2rem 0;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.tch-questions-apply-section .tch-questions-apply-title {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.tcf-btn-orange-2 {
+    width: 100%;
+    background: linear-gradient(to left,#955722, #865124, #664327, #3e210d, #341b0a);
+    border-radius: 4px;
+    padding: .5rem 0;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    height: 100%;
+}
+.text-white {
+    color: #fff !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.fs-12 {
+    font-size: .75rem;
+    line-height: 1.125rem;
+}
+.font-weight-normal {
+    font-weight: 400 !important;
+}

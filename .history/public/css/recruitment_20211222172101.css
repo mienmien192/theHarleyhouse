@@ -1,0 +1,14 @@
+.d-banner-desktop {
+    display: block;
+}
+.tcf-banner {
+    height: 70vh;
+}
+.tcf-banner {
+    height: 80vh;
+    background: url(/img/tuyendung.jpg) top center no-repeat;
+    margin-top: 4.25rem;
+    width: 100%;
+    background-size: cover !important;
+    overflow-x: hidden;
+}
