@@ -50,6 +50,9 @@ router.put('/edit/:id', async(req, res) => {
     try {
         const product = await productModel.findById(req.params.id)
         product.name = req.body.name
+        product.price = req.body.price
+        product.info = req.body.info
+
         await product.save()
         res.redirect('/admin/product')
     } catch (e) {
