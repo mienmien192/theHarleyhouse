@@ -1,0 +1,41 @@
+<div style="margin-bottom: -100px; background-image: url( https://image.freepik.com/free-photo/front-view-yummy-sweet-pancakes-with-cup-tea-dark-background-sweet-cake-dessert-milk_140725-89763.jpg ) ; background-size: cover; height: 81vh">
+    <div class="container w-50" style="padding: 40px; background-color: rgba(146, 146, 146, 0.645); height: 81vh">
+        <center>
+            <h1><strong>ĐĂNG NHẬP</strong></h1>
+        </center>
+
+        <!-- <a href="/user/twitter" style="width: 100%;" class="btn btn-outline-success mt-2"><i class="fab fa-twitter-square" style="font-size:20px"></i> Login with Twitter</a> -->
+
+        <%- include("../part/message") %>
+            <form action="/user/login" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control mt-4" id="floatingInput" placeholder="Email" name="email">
+                    <label for="floatingInput">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="password">
+                    <label for="floatingInput">Mật khẩu</label>
+                </div>
+
+                <div class="forgot mt-4 mb-4 ">
+                    <a href="#" style="color: #341b0a; float: right;">Quên mật khẩu</a>
+                    <p style="display: flex">Chưa có tài khoản ? <a href="/user/register" style="color: #341b0a"> Đăng ký</a></p>
+                </div>
+                <div class="acc" d-flex>
+
+                </div>
+
+                <div class="form-floating mt-3 ">
+                    <!-- <input type="submit" class=" form-control btn btn-outline-success" id="floatingSubmit" value="Submit"> -->
+                    <button class="btn btn-primary form-control" style="padding: 20px;" type="login" value="Login" id="floatingLogin">Đăng nhập</button>
+                </div>
+            </form>
+
+
+            <div class="social">
+                <a href="/user/google" style="width: 60%;" class="btn btn-outline-danger mt-2"><i style="font-size:20px" class="fa fa-google-plus-square"></i> Đăng nhập bằng Google</a> <br>
+                <a href="/user/facebook" style="width: 60%;" class="btn btn-outline-primary mt-2"><i class="fa fa-facebook-square" style="font-size:20px"></i> Đăng nhập bằng Facebook</a> <br>
+
+            </div>
+    </div>
+</div>
