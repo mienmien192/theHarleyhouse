@@ -41,7 +41,7 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
-.btn-tcf:not(:disabled):not(.disabled) {
+.btn:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
 [type=button], [type=reset], [type=submit], button {

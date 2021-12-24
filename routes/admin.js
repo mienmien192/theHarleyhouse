@@ -5,7 +5,9 @@ const productModel = require('../models/product.model')
 router.get('/', async(req, res) => {
     res.render('admin/main/login')
 })
-
+router.get('/dashboard', async(req, res) => {
+    res.render('admin/main/home')
+})
 
 
 module.exports = router

@@ -1,0 +1,17 @@
+.box_mid .mid-title .titleR {
+    float: right;
+    position: relative;
+}
+.clear {
+    clear: both;
+    font-size: 0;
+}
+.news {
+    margin-bottom: 30px;
+}
+.news .img {
+    padding-top: 66.666666%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}

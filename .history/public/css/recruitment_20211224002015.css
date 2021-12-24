@@ -60,6 +60,10 @@ button, input, optgroup, select, textarea {
     line-height: inherit;
 }
 
+
+
+
+
 .d-banner-desktop {
     display: block;
 }
@@ -68,6 +72,7 @@ button, input, optgroup, select, textarea {
 }
 .tcf-banner {
     height: 80vh;
+   
     /* background: url(/img/tuyendung.jpg) top center no-repeat;*/
     margin-top: 4.25rem;
     width: 100%;

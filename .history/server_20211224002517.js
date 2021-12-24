@@ -58,7 +58,7 @@ app.use('/admin/category', categoryRouter)
 app.use('/admin/product', productRouter)
 app.use('/cart', cartRouter)
 app.use('/admin', adminRouter)
-
+app.use('/user', userRouter)
 app.use('/admin/user', userRouter)
 console.log("Load thanh cong")
 app.listen(process.env.PORT || 3000)
