@@ -74,9 +74,11 @@ function check(req, res, next) {
 router.get('/profile', check, async(req, res) => {
     let value = "No Name"
     if (req.user) {
-        value = req.user.username;
-        value = req.user.phone;
-        value = req.user.address;
+        id = req.user._id;
+        name = req.user.name;
+        email = req.user.email;
+        address = req.user.address;
+        phone = req.user.phone;
     }
 
     res.render('users/profile', { name: value })
@@ -98,56 +100,39 @@ router.get('/google/callback', passport.authenticate('google', {
 
 router.get('/facebook', passport.authenticate('facebook'))
 router.get('/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/user/profile',
-            failureRedirect: '/user/login',
-            failureFlash: true
-        }),
-        function(req, res) {
-            // Successful authentication, redirect home.
-            res.redirect('/');
-        })
-    // Admin Login and Register
-    //Middleware de check isAdmin
-function checkAdmin(req, res, next) {
-    if (req.session.isAdmin) {
-        next()
-    } else {
-        res.redirect("/user/login");
-    }
-}
+    passport.authenticate('facebook', {
+        successRedirect: '/user/profile',
+        failureRedirect: '/user/login',
+        failureFlash: true
+    }),
+    function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    })
 
-router.post("/admin/login", passport.authenticate('local'), (req, res) => {
-    if (req.user.isAdmin) {
-        req.session.user_id = req.user._id;
-        req.session.isAdmin = true;
-        return res.status(200).json({
-            "status": "Admin login successfully"
-        });
-    } else {
-        return res.sendStatus(403);
-    }
-})
-
-router.post("/admin/register", async(req, res) => {
+router.get("/edit/:id", check, async(req, res) => {
     try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        const user = new userModel({
-            username: req.body.username,
-            email: req.body.email,
-            password: hashedPassword,
-            isAdmin: 1
-        })
-        await user.save()
-        req.flash("success", "Insert successfull")
-        return res.status(201).send(user);
-
+        const user = await userModel.findById(req.params.id);
+        res.render("users/profile", { user: user });
     } catch (e) {
-        req.flash("error", "Insert failed")
-        console.log(e)
-        res.redirect('/main')
+        console.log(e);
+        res.redirect("/");
     }
-})
+});
+router.put("/edit/:id", async(req, res) => {
+    try {
+        const user = await userModel.findById(req.params.id);
+        user.name = req.body.name;
+        user.address = req.body.address;
+        user.phone = req.body.phone;
+        user.email = req.body.email;
+        await user.save();
+        res.redirect("/user/profile");
+    } catch (e) {
+        console.log(e);
+        res.redirect("/");
+    }
+});
 
 
 module.exports = router
