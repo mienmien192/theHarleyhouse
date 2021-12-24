@@ -26,6 +26,8 @@ router.post('/', async(req, res) => {
         const user = new userModel({
             username: req.body.username,
             email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
             password: hashedPassword,
         })
         await user.save()
@@ -75,7 +77,7 @@ router.get('/profile', check, async(req, res) => {
     let value = "No Name"
     if (req.user) {
         id = req.user._id;
-        name = req.user.name;
+        value="Name: " +req.user.name;
         email = req.user.email;
         address = req.user.address;
         phone = req.user.phone;

@@ -4,7 +4,7 @@ const cartModel = require('../models/cart.model')
 const orderModel = require('../models/order.model')
 const productModel = require('../models/product.model')
 const paypal = require('paypal-rest-sdk')
-router.get('/', async(req, res) => {
+router.get('/',check , async(req, res) => {
     try {
         // req.session.cart=null
         // console.log(req.session.cart.items[0].item)
@@ -89,7 +89,7 @@ function check(req, res, next) {
     }
     res.redirect('/user/login')
 }
-router.get('/checkout', check, (req, res) => {
+router.get('/checkout', (req, res) => {
     if (!req.session.cart) {
         res.redirect('/cart')
     }
@@ -107,7 +107,7 @@ router.post('/order', async(req, res) => {
             address: req.body.address
         })
         req.session.cart = null
-        req.flash("success", "Order successfully")
+        req.flash("success", "Đặt hàng thành công")
         await order.save()
         res.redirect('/')
     } catch (e) {

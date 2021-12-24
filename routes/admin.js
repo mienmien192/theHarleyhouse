@@ -5,10 +5,10 @@ const passport = require("passport");
 
 function checkAdmin(req, res, next) {
     if (req.isAuthenticated() && req.user.role === "Admin") {
-        req.flash("success", "Login successfully");
+        req.flash("success", "Đăng nhập thành công");
         return next();
     }
-    req.flash("error", "Account doesn't have permission");
+    req.flash("error", "Tài khoản không được ttruy cập");
     res.redirect('/admin/login');
 }
 router.get('/', checkAdmin, async(req, res) => {
