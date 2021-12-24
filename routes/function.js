@@ -7,9 +7,9 @@ router.get('/allProduct', async(req, res) => {
     try {
         const products = await productModel.find().populate('category', ['name'])
 
-        
-    res.render('functions/allProduct', { products: products })
-        
+
+        res.render('functions/allProduct', { products: products })
+
     } catch (e) {
         console.log(e.message)
         res.redirect('/')
@@ -20,7 +20,9 @@ router.get('/coffeeStory', (req, res) => {
 
     res.render('functions/coffeeStory')
 })
-
+router.get('/news2', (req, res) => {
+    res.render('functions/news2')
+})
 router.get('/aboutUs', (req, res) => {
     res.render('functions/aboutUs')
 })
