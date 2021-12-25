@@ -1,23 +1,11 @@
-<div class="container container mt-5 w-50 d-flex justify-content-center" style="padding:50px; height: 90vh;background: #ffbe76;">
+<div class="container container mt-5 w-50 d-flex justify-content-center" style="padding:50px; height: 90vh;background: #dda53e; margin-bottom:-100px ;">
     <%- include('../part/message') %>
         <br>
 
-        <div class="row profile">        
-            <div class="col-md-3">          
-             <div class="profile-sidebar">                          
-              <div class="profile-userpic">                 <img src="https://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_user_profile/images/profile_user.jpg" class="img-responsive" alt="Thông tin cá nhân">               
-              </div>                                            
-              <div class="profile-usertitle">                   
-               <div class="profile-usertitle-name">   <span>Tên: </span>                  <p ></p>               </div>                  
-               <div class="profile-usertitle-phone" >     <span>Phone: </span>                <p><%= phone %></p>                   </div>              
-              </div>                                                
-              <div class="profile-userbuttons">                 
-               <button type="button" class="btn btn-success btn-sm">Trang chủ</button>                  
-               <button type="button" class="btn btn-danger btn-sm">Thoát ra</button>                
-              </div>                                     
+                                        
 
 
-        <!-- <form action="">
+        <form action="">
 
 
             <h1 class="row user-information">Thông tin tài khoản của bạn</h1>
@@ -31,20 +19,24 @@
 
                 <div class="col-lg-6">
                     <div class="checkout_input">
-                        <p>Tên <span>*</span></p> 
-                        <input type="text" required value="<%= name %>">
+                        <h6>Tên </h6> 
+                        <h2 ><%= name %></h2>
+                        <hr>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="checkout_input">
-                        <p>Phone <span>*</span></p> 
-                        <input type="text" required value="<%= phone %>">
+                        <h6>Phone </h6> 
+                        <h2 ><%= phone %></h2>
+                        <hr>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="checkout_input">
-                        <p>Address <span>*</span></p> 
-                        <input type="text" required value="<%= address %>">
+                        <h6>Address </h6> 
+                        <h2><%= address %></h2>
+                        <hr>
+                       
                     </div>
                 </div>
               
@@ -54,7 +46,7 @@
                     <button style="float: right; width: 100px;" class="btn btn-primary" type="submit" value="Submit" id="floatingSubmit">Cập nhật</button>
                 </div>
             </div>
-        </form> -->
+        </form>
 </div>
 
 

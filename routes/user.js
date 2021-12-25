@@ -77,7 +77,7 @@ router.get('/profile', check, async(req, res) => {
     let value = "No Name"
     if (req.user) {
         id = req.user._id;
-        value="Name: " +req.user.name;
+        value= " " + req.user.name;
         email = req.user.email;
         address = req.user.address;
         phone = req.user.phone;
