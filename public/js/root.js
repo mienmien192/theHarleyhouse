@@ -49,7 +49,7 @@ $('.reduceCart').on("submit", function(event) {
         type: 'PUT',
         data: {},
         success: function() {
-            swal("Đã bỏ ra khỏi giỏ!", "tiếp tục mua", "success");
+
             $("#total1").load(root + "/cart #total2");
             $("#qty" + id).load(root + "/cart " + qty2);
             $("#temp1").load(root + "/cart #temp2");
@@ -72,7 +72,7 @@ $('.increaseCart').on("submit", function(event) {
         type: 'PUT',
         data: {},
         success: function() {
-            swal("Thêm thành công!", "tiếp tục!", "success");
+
             $("#total1").load(root + "/cart #total2");
             $("#temp1").load(root + "/cart #temp2");
             $("#qty" + id).load(root + "/cart " + qty2);
