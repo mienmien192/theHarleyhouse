@@ -66,6 +66,9 @@ router.get('/recruitment', (req, res) => {
 router.get('/news', (req, res) => {
     res.render('functions/news')
 })
+router.get('/thank', (req, res) => {
+    res.render('functions/thankyou')
+})
 
 router.get('/allProduct', (req, res) => {
     res.render('functions/allProduct')
