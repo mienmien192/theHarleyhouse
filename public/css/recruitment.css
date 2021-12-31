@@ -1,61 +1,87 @@
-
 .row {
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
+
 .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+
 .justify-content-center {
     justify-content: center !important;
 }
+
 .align-items-center {
     align-items: center !important;
 }
+
 .flex-column {
     flex-direction: column !important;
 }
+
 .d-flex {
     display: flex !important;
 }
-img, svg {
+
+img,
+svg {
     vertical-align: middle;
 }
+
 img {
     border-style: none;
 }
-
 
 a {
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
 }
+
 .btn-tcf:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
-[type=button], [type=reset], [type=submit], button {
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
     -webkit-appearance: button;
 }
-button, select {
+
+button,
+select {
     text-transform: none;
 }
-button, input {
+
+button,
+input {
     overflow: visible;
 }
-button, input, optgroup, select, textarea {
+
+button,
+input,
+optgroup,
+select,
+textarea {
     margin: 0;
-    font-family: inherit;
+    font-family: 'Baloo Thambi 2', cursive;
     font-size: inherit;
     line-height: inherit;
 }
@@ -63,9 +89,11 @@ button, input, optgroup, select, textarea {
 .d-banner-desktop {
     display: block;
 }
+
 .tcf-banner {
     height: 70vh;
 }
+
 .tcf-banner {
     height: 80vh;
     /* background: url(/img/tuyendung.jpg) top center no-repeat;*/
@@ -78,6 +106,7 @@ button, input, optgroup, select, textarea {
 .text-dark-1 {
     color: #000;
 }
+
 .tcf-slogan {
     font-weight: 700;
     font-size: 2.5rem;
@@ -90,6 +119,7 @@ button, input, optgroup, select, textarea {
     background-clip: text;
     color: transparent;
 }
+
 .d-none {
     display: none !important;
 }
@@ -97,6 +127,7 @@ button, input, optgroup, select, textarea {
 .tch-questions-apply-section {
     padding: 2rem 0;
 }
+
 .tch-questions-apply-section .tch-questions-apply-title {
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -107,19 +138,22 @@ button, input, optgroup, select, textarea {
 
 .tcf-btn-orange-2 {
     width: 100%;
-    background: linear-gradient(to left,#955722, #865124, #664327, #3e210d, #341b0a);
+    background: linear-gradient(to left, #955722, #865124, #664327, #3e210d, #341b0a);
     border-radius: 4px;
     padding: .5rem 0;
     font-size: 1rem;
     line-height: 1.125rem;
     height: 100%;
 }
+
 .text-white {
     color: #fff !important;
 }
+
 .font-weight-bold {
     font-weight: 700 !important;
 }
+
 .btn-tcf {
     display: inline-block;
     font-weight: 400;
@@ -143,12 +177,15 @@ button, input, optgroup, select, textarea {
     font-size: .75rem;
     line-height: 1.125rem;
 }
+
 .font-weight-normal {
     font-weight: 400 !important;
 }
+
 .bg-home-card {
     background: #ff6725;
 }
+
 .tcf-incentives-card {
     background: #fff;
     border: 1px solid #f2f2f7;
