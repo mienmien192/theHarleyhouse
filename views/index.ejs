@@ -1,7 +1,7 @@
 <div class="content1 mb-2 d-flex justify-content-center">
-    
+
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
-        
+
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -41,15 +41,15 @@
 </div>
 <div class="container my-3 mt-2" style="font-family: 'Anton', sans-serif;">
     <%- include('./part/message')%>
-    <div class="row">
-        <h1 class="menu_home_title line_after_heading" style="font-family: 'Anton', sans-serif; margin-top:95px"><strong>Thực Đơn </strong>
-            <a href="/function/allProduct" class="btn btn-outline-dark" style="float:right; width:200px; 
+        <div class="row">
+            <h1 class="menu_home_title line_after_heading" style="font-family: 'Anton', sans-serif; margin-top:95px"><strong>Thực Đơn </strong>
+                <a href="/function/allProduct" class="btn btn-outline-dark" style="float:right; width:200px; 
             height:40px;text-transform: uppercase;font-family: 'Anton', sans-serif; ">Tất cả sản phẩm</a> <br></h1>
 
-        <img src="/img/Menu.png" alt="">
-        <br>
-    </div>
-    <hr> <br>
+            <img src="/img/Menu.png" alt="">
+            <br>
+        </div>
+        <hr> <br>
 
 
 </div>
@@ -155,4 +155,35 @@
         <br><br>
     </div>
 </div>
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "101156085680440");
+    chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml: true,
+            version: 'v12.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
