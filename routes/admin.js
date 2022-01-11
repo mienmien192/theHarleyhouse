@@ -8,7 +8,7 @@ function checkAdmin(req, res, next) {
         req.flash("success", "Đăng nhập thành công");
         return next();
     }
-    req.flash("error", "Tài khoản không được ttruy cập");
+    req.flash("error", "Tài khoản không được truy cập");
     res.redirect('/admin/login');
 }
 router.get('/', checkAdmin, async(req, res) => {

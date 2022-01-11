@@ -7,6 +7,7 @@ const session = require('express-session')
 const cartRouter = require('./routes/cart')
 const functionRouter = require('./routes/function')
 const adminRouter = require('./routes/admin')
+const nodemailer = require("nodemailer");
 require('dotenv').config()
 const app = express()
 

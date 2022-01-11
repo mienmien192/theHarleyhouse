@@ -35,7 +35,7 @@
                         <div class="col-lg-6">
                             <div class="checkout_input">
                                 <p>Email <span>*</span></p> 
-                                <input type="email" required>
+                                <input id="emailCustom" type="email" required>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,8 @@
                     %>
                   </div>
                 <div class="checkout__order__total" >Tổng tiền  <span><%= total %> ₫</span></div>
-                <input type="submit" class="order btn btn-primary mt-3 px-5 mb-5" value="Order" name="order">
+                <button type="submit" class="order btn btn-primary mt-3 px-5 mb-5" value="Order" style="width: 10.5em;
+    height: 2.28em;" name="order">Đặt hàng </button>
                 <a href="/cart/pay" style="background-color: #ffc439; float: right; width: 200px; font-size:14px; color:#3498db; font-weight:bold;font-style: oblique; margin-top: 16px;" class="btn btn-warning ">
                         <i class="fa fa-paypal" style="font-size: 20px;"></i> <span style="color:navy; ">Pay</span>Pal</a> <br>
                 </div>
