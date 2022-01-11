@@ -23,9 +23,9 @@ router.get('/search', async(req, res) => {
     const name = req.query.name
 
 
-    const products = await productModel.find().populate('category', ['name'])
+    const products = await productModel.find().populate('products', ['name'])
     const result = products.filter(function(product) {
-        return product.category.name.toLowerCase().indexOf(name.toLowerCase()) !== -1
+        return product.name.toLowerCase().indexOf(name.toLowerCase()) !== -1
     })
     console.log(result)
     res.render('admin/products/search', { products: result });
