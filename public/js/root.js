@@ -102,29 +102,28 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-$('button.order').click(function(event)
-{
-  var emailCustom=$('input#emailCustom').val();
-  
-  //alert(emailCustom);
-//   Email.send({
-//      SecureToken: "8fdcd2ba-b08c-4c56-b11b-428835e438f1",
-//       To : emailCustom,
-//       From : "theharleyhouse.org@gmail.com",
-//       Subject : "Xác nhận đơn hàng",
-//       Body : "Chúc mừng bạn đã đặt thành công! Cảm ơn đã ghé thăm chúng tôi."
-//   }).then(
-//   message => alert("Chúng tôi đã xác nhận đơn của bạn. Vui lòng kiểm tra mail!")
-//   );
-Email.send({
-    Host : "smtp.gmail.com",
-    Username : "theharleyhouse.org@gmail.com",
-    Password : "PhamThanhDuc090420",
-    To : emailCustom,
-    From : "theharleyhouse.org@gmail.com",
-    Subject : "Xác nhận đơn hàng",
-    Body : "Chúc mừng bạn đã đặt thành công! Cảm ơn đã ghé thăm chúng tôi.  "
-}).then(
-  message => alert("Chúng tôi đã xác nhận đơn của bạn. Vui lòng kiểm tra mail!")
-);
+$('button.order').click(function(event) {
+    var emailCustom = $('input#emailCustom').val();
+
+    //alert(emailCustom);
+    //   Email.send({
+    //      SecureToken: "8fdcd2ba-b08c-4c56-b11b-428835e438f1",
+    //       To : emailCustom,
+    //       From : "theharleyhouse.org@gmail.com",
+    //       Subject : "Xác nhận đơn hàng",
+    //       Body : "Chúc mừng bạn đã đặt thành công! Cảm ơn đã ghé thăm chúng tôi."
+    //   }).then(
+    //   message => alert("Chúng tôi đã xác nhận đơn của bạn. Vui lòng kiểm tra mail!")
+    //   );
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "theharleyhouse.org@gmail.com",
+        Password: "PhamThanhDuc090420",
+        To: emailCustom,
+        From: "theharleyhouse.org@gmail.com",
+        Subject: "Xác nhận đơn hàng",
+        Body: "Chúc mừng bạn đã đặt thành công! Cảm ơn đã ghé thăm chúng tôi.  "
+    }).then(
+        message => alert("Chúng tôi đã xác nhận đơn của bạn. Vui lòng kiểm tra mail!")
+    );
 });
